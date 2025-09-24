@@ -1,1 +1,1 @@
-# objektno-orientirano-programiranje
+Објектно-ориентирано програмирање 2025/2026
