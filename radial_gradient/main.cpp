@@ -17,7 +17,6 @@ struct RGBImage {
     vector<vector<Pixel>> Image = vector<vector<Pixel>>(img_wh, vector<Pixel>(img_wh));
 };
 
-// --- Convert HSV to RGB ---
 Pixel HSVtoRGB(double h, double s, double v) {
     double c = v * s;
     double x = c * (1 - fabs(fmod(h / 60.0, 2) - 1));
@@ -45,10 +44,10 @@ int main() {
     for (int i = 0; i < img_wh; i++) {
         for (int j = 0; j < img_wh; j++) {
             double dist = sqrt((i - img_wh2) * (i - img_wh2) + (j - img_wh2) * (j - img_wh2));
-            double norm = dist / Dist; // 0 → 1
-            double hue = 360.0 * norm; // map to rainbow
-            double sat = 1.0;          // full saturation
-            double val = 1.0;          // full brightness
+            double norm = dist / Dist;
+            double hue = 360.0 * norm;
+            double sat = 1.0;          
+            double val = 1.0;        
 
             img.Image[i][j] = HSVtoRGB(hue, sat, val);
         }
@@ -64,4 +63,3 @@ int main() {
     }
     return 0;
 }
-v
